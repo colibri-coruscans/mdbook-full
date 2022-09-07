@@ -19,8 +19,9 @@ runs:
     - name: install mdbook and plugins
       shell: bash
       run: |
-        curl -LsSf https://github.com/drmingdrmer/mdbook-svgbob/releases/download/v0.1.2/mdbook-svgbob-v0.1.2-linux.zip -o mdbook-svgbob.zip
-        unzip mdbook-svgbob.zip -d mdbook-svgbob
+        curl -LsSf https://github.com/colibri-coruscans/mdbook-full/releases/download/v0.4.21/mdbook-svgbob.tar.gz -o mdbook-svgbob.tar.gz
+        mkdir mdbook-svgbob
+        tar xz -f mdbook-svgbob.tar.gz -C mdbook-svgbob
         echo "$PWD/mdbook-svgbob" >> $GITHUB_PATH
 
         curl -LsSf https://github.com/colibri-coruscans/mdbook-full/releases/download/v0.4.21/mdbook-katex.tar.gz -o mdbook-katex.tar.gz
@@ -28,12 +29,13 @@ runs:
         tar xz -f mdbook-katex.tar.gz -C mdbook-katex
         echo "$PWD/mdbook-katex" >> $GITHUB_PATH
 
-        curl -LsSf https://github.com/Michael-F-Bryan/mdbook-linkcheck/releases/download/v0.7.6/mdbook-linkcheck.x86_64-unknown-linux-gnu.zip -o mdbook-linkcheck.zip
-        unzip mdbook-linkcheck.zip -d mdbook-linkcheck
+        curl -LsSf https://github.com/colibri-coruscans/mdbook-full/releases/download/v0.4.21/mdbook-linkcheck.tar.gz -o mdbook-linkcheck.tar.gz
+        mkdir mdbook-linkcheck
+        tar xz -f mdbook-linkcheck.tar.gz -C mdbook-linkcheck
         chmod +x mdbook-linkcheck/mdbook-linkcheck
         echo "$PWD/mdbook-linkcheck" >> $GITHUB_PATH
 
-        curl -LsSf https://github.com/rust-lang/mdBook/releases/download/v0.4.21/mdbook-v0.4.21-x86_64-unknown-linux-gnu.tar.gz -o mdbook.tar.gz
+        curl -LsSf https://github.com/colibri-coruscans/mdbook-full/releases/download/v0.4.21/mdbook.tar.gz -o mdbook.tar.gz
         mkdir mdbook
         tar xz  -f mdbook.tar.gz -C mdbook
         echo "$PWD/mdbook" >> $GITHUB_PATH
