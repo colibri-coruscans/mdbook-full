@@ -23,9 +23,9 @@ runs:
         unzip mdbook-svgbob.zip -d mdbook-svgbob
         echo "$PWD/mdbook-svgbob" >> $GITHUB_PATH
 
-        curl -LsSf https://github.com/colibri-coruscans/mdbook-full/releases/download/v0.4.21/mdbook-katex -o mdbook-katex-binary
+        curl -LsSf https://github.com/colibri-coruscans/mdbook-full/releases/download/v0.4.21/mdbook-katex.tar.gz -o mdbook-katex.tar.gz
         mkdir mdbook-katex
-        mv mdbook-katex-binary mdbook-katex/mdbook-katex
+        tar xz -f mdbook-katex.tar.gz -C mdbook-katex
         echo "$PWD/mdbook-katex" >> $GITHUB_PATH
 
         curl -LsSf https://github.com/Michael-F-Bryan/mdbook-linkcheck/releases/download/v0.7.6/mdbook-linkcheck.x86_64-unknown-linux-gnu.zip -o mdbook-linkcheck.zip
@@ -37,5 +37,3 @@ runs:
         mkdir mdbook
         tar xz  -f mdbook.tar.gz -C mdbook
         echo "$PWD/mdbook" >> $GITHUB_PATH
-
-        find . -type f
